@@ -1,7 +1,7 @@
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# Added Extra `.parent` to get absolute root of the project, this was done because of adding BACKEND
+# Added Extra `.parent` to get absolute root of the project, this was done because of adding backend dir
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 
