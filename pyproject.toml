@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "todolist"
+version = "0.1.0"
+description = "A simple todolist web application"
+authors = ["vickvey <vivek22@iiserb.ac.in>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
