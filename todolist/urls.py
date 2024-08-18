@@ -11,6 +11,7 @@ router=DefaultRouter()
 router.register('taskapi', views.TaskViewSet, basename='task')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include(router.urls)),
+    path('admin/', admin.site.urls), 
+    path('api/', include(router.urls)), # API routes under /api/
+    path('', include('frontend.urls')),  # Frontend routes
 ]
