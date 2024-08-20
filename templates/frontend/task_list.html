@@ -3,26 +3,29 @@
 {% block content %}
 <div class="container">
   <h1 class="center-align">Task List</h1>
-  <a href="{% url 'task_create' %}">Add New Task</a>
+  <a href="{% url 'task_create' %}" class="btn">Add New Task</a>
   <div class="row">
-    <ul class="collapsible s6">
+    <ul class="collapsible">
       {% for task in tasks %}
       <li>
         <div class="collapsible-header">
           <a href="{% url 'task_detail' task.id %}">{{ task.title }}</a>
         </div>
         <div class="collapsible-body">
-          <a href="{% url 'task_update' task.id %}">Edit</a>
-          <form
-            action="{% url 'task_delete' task.id %}"
-            method="post"
-            style="display: inline"
-          >
-            {% csrf_token %}
-            <button type="submit" class="btn red">Delete</button>
-          </form>
+          <!-- Collapsible body content here, if needed -->
+          <div class="task-actions">
+            <a href="{% url 'task_update' task.id %}" class="btn-small">Edit</a>
+            <form
+              action="{% url 'task_delete' task.id %}"
+              method="post"
+              style="display: inline"
+            >
+              {% csrf_token %}
+              <button type="submit" class="btn red">Delete</button>
+            </form>
+          </div>
         </div>
-      </li>
+      </li>      
       {% endfor %}
     </ul>
   </div>
@@ -33,7 +36,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     var elems = document.querySelectorAll(".collapsible");
-    M.Collapsible.init(elems, {}); // Initialize with default options
+    M.Collapsible.init(elems); // Initialize collapsible
   });
 </script>
 {% endblock script %}
