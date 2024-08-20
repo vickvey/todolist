@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ToDoList{% endblock %}</title>
+
+    <!-- Materialize CSS and Icons -->
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <!-- Extra Head -->
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    {% block content %} {% endblock %}
+    {% block script %} {% endblock %}
+
+    <!-- Materialize JS -->
+    <script src="{% static 'js/materialize.min.js' %}"></script>
+</body>
+</html>

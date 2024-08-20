@@ -1,14 +1,15 @@
 <!-- templates/frontend/task_detail.html -->
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Task Detail</title>
-</head>
-<body>
-    <h1>{{ task.title }}</h1>
+{% block title %}Task {{action}}{% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <h1 class="center-align">{{ task.title }}</h1>
     <p>{{ task.description }}</p>
     <a href="{% url 'task_update' task.id %}">Edit</a>
     <a href="{% url 'task_list' %}">Back to List</a>
-</body>
-</html>
+</div>
+
+{% endblock content %}
