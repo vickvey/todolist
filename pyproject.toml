@@ -11,6 +11,7 @@ python = "^3.12"
 django = "^5.1"
 djangorestframework = "^3.15.2"
 requests = "^2.32.3"
+drf-yasg = "^1.21.7"
 
 
 [build-system]
