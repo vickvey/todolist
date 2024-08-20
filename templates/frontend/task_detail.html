@@ -1,15 +1,20 @@
-<!-- templates/frontend/task_detail.html -->
 {% extends "base.html" %}
 
-{% block title %}Task {{action}}{% endblock title %}
+{% block title %}Task {{ action }}{% endblock title %}
 
 {% block content %}
-
 <div class="container">
     <h1 class="center-align">{{ task.title }}</h1>
-    <p>{{ task.description }}</p>
-    <a href="{% url 'task_update' task.id %}">Edit</a>
-    <a href="{% url 'task_list' %}">Back to List</a>
+    <div class="card-panel teal lighten-4">
+        <span class="black-text">
+            <p>{{ task.description }}</p>
+        </span>
+    </div>
+    <div class="center-align">
+        <a href="{% url 'task_update' task.id %}" class="btn waves-effect waves-light">Edit</a>
+        <a href="{% url 'task_list' %}" class="btn waves-effect waves-light">
+            Back to List
+        </a>        
+    </div>
 </div>
-
 {% endblock content %}

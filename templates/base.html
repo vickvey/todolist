@@ -3,20 +3,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}ToDoList{% endblock %}</title>
 
     <!-- Materialize CSS and Icons -->
-    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <link rel="stylesheet" href="{% static 'css/materialize.min.css' %}" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <style>
+        /* Ensure the body takes full height and applies a modern font */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Open Sans', sans-serif; /* Modern and clean font-family */
+            color: #444; /* Slightly lighter color for text */
+        }
+        
+        /* Main content container */
+        .container {
+            max-width: 1200px; /* Set a max-width to control the size */
+            margin: 0 auto; /* Center the container */
+            padding: 20px; /* Add padding for spacing inside the container */
+            box-sizing: border-box; /* Ensure padding does not affect total width */
+        }
+        
+        /* Content wrapper to ensure proper spacing */
+        .content-wrapper {
+            flex: 1; /* Allow this wrapper to grow */
+        }
+        /* Styling for developer credit */
+        .developer-credit {
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa; /* Light grey background */
+            border-top: 1px solid #e0e0e0; /* Light grey border for separation */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Style the link */
+        .developer-credit a {
+            color: #007bff; /* Customize link color */
+            text-decoration: none;
+        }
+
+        .developer-credit a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+
+        /* Center-align headings */
+        .center-align {
+            text-align: center;
+        }
+
+        /* Additional styling for the header and paragraphs */
+        h1 {
+            font-size: 2.5rem; /* Adjust heading size */
+            margin-bottom: 20px;
+        }
+
+        p.flow-text {
+            font-size: 1.2rem; /* Slightly larger font size for readability */
+            color: #333; /* Darker text color for contrast */
+        }
+
+        /* Remove margin and padding from horizontal rules */
+        hr {
+            margin: 20px 0;
+            border: 0;
+            border-top: 1px solid #e0e0e0;
+        }
+    </style>
+
     <!-- Extra Head -->
     {% block extra_head %}{% endblock %}
 </head>
 <body>
-    {% block content %} {% endblock %}
-    {% block script %} {% endblock %}
+    <div class="container">
+        <h1 class="center-align">To Do List Web Application</h1>
+        <p class="flow-text center-align">
+            A Simple To Do List Manager to create, list and mark tasks as done
+        </p>
+        <hr />
+    </div>
+
+    {% block content %} {% endblock %} {% block script %} {% endblock %}
+
+    <div class="developer-credit">
+        <h3 class="center-align">
+            Developed By:
+            <a href="https://github.com/vickvey" target="_blank">Vivek Kumar</a>
+        </h3>
+    </div>
 
     <!-- Materialize JS -->
     <script src="{% static 'js/materialize.min.js' %}"></script>

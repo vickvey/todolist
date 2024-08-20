@@ -1,23 +1,26 @@
-<!-- templates/frontend/task_form.html -->
 {% extends "base.html" %}
 
 {% block title %}{{ action }} Task{% endblock %}
 
 {% block content %}
-
 <div class="container">
     <h1 class="center-align">{{ action }} Task</h1>
-    <form method="post">
-        {% csrf_token %}
-        <label for="title">Title:</label>
-        <input type="text" name="title" id="title" value="{{ task.title|default_if_none:'' }}">
-        <br>
-        <label for="description">Description:</label>
-        <textarea name="description" id="description">{{ task.description|default_if_none:'' }}</textarea>
-        <br>
-        <button type="submit">{{ action }} Task</button>
-    </form>
-    <a href="{% url 'task_list' %}">Back to List</a>
+    <div class="row">
+        <form class="col s12" method="post">
+            {% csrf_token %}
+            <div class="input-field col s12">
+                <input type="text" name="title" id="title" value="{{ task.title|default_if_none:'' }}" required>
+                <label for="title">Title</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="description" name="description" class="materialize-textarea" required>{{ task.description|default_if_none:'' }}</textarea>
+                <label for="description">Description</label>
+            </div>
+            <div class="input-field col s12">
+                <button type="submit" class="btn waves-effect waves-light">{{ action }} Task</button>
+                <a href="{% url 'task_list' %}" class="btn-flat waves-effect">Back to List</a>
+            </div>
+        </form>
+    </div>
 </div>
-
 {% endblock content %}
