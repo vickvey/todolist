@@ -36,4 +36,5 @@ urlpatterns = [
 
     path('admin/', admin.site.urls), 
     path('api/', include(router.urls)), # API routes under /api/
+    path('', include('frontend.urls')), # For my frontend app
 ]
