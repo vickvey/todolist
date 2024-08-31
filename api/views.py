@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from core_api import models
-from core_api import serializers
+from api import models
+from api import serializers
 
 class TaskViewSet(viewsets.ModelViewSet):
     """

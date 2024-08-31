@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core_api import models
+from api import models
 
 
 class TaskSerializer(serializers.ModelSerializer):

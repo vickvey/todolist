@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from core_api import views
+from api import views
 
 # Creating Router Object
 router=DefaultRouter()
