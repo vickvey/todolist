@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 
-API_URL = 'http://localhost:8000/api/taskapi/'
+API_URL = 'http://localhost:8000/api/tasks/'
 
 def handle_api_request(method, url, data=None):
     try:

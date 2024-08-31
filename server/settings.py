@@ -34,7 +34,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
     'frontend', # For FrontEnd Written by vickvey
-    'core_api',
+    'api',
     'rest_framework',
     'drf_yasg',
 
