@@ -108,10 +108,16 @@ def task_delete(request, id):
 
     if request.method == 'POST':
         try:
-            handle_api_request('DELETE', f"{API_URL}{id}/")
-            messages.success(request, "Task deleted successfully!")
-            return redirect('task_list')
-        except requests.exceptions.HTTPError as e:
+            response = requests.delete(f"{API_URL}{id}/")
+            response.raise_for_status()  # Check for HTTP errors
+
+            if response.status_code == 204:
+                messages.success(request, "Task deleted successfully!")
+                return redirect('task_list')
+            else:
+                messages.error(request, f"Unexpected response: {response.status_code}")
+                return redirect('task_list')
+        except requests.exceptions.RequestException as e:
             messages.error(request, f"Error deleting task: {e}")
             return redirect('task_list')
     
