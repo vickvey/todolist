@@ -29,5 +29,5 @@ urlpatterns = [
     path("api/", include("api.urls")),
 
     # Client Side
-    path("", include("frontend.urls")),  # Frontend app
+    path("", include("public.urls")),  # Frontend app
 ]

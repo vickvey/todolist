@@ -1,7 +1,7 @@
-# frontend/urls.py
+# public/urls.py
 
 from django.urls import path
-from frontend import views
+from public import views
 
 urlpatterns = [
     path('', views.task_list, name='task_list'),

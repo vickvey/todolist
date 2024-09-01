@@ -37,7 +37,7 @@ def task_list(request):
     except ValueError as e:
         messages.error(request, str(e))
         return HttpResponse(status=500)  # Internal Server Error
-    return render(request, 'frontend/task_list.html', {'tasks': tasks})
+    return render(request, 'public/task_list.html', {'tasks': tasks})
 
 def task_detail(request, id):
     try:
@@ -50,7 +50,7 @@ def task_detail(request, id):
     except ValueError as e:
         messages.error(request, str(e))
         return HttpResponse(status=404)  # Not Found
-    return render(request, 'frontend/task_detail.html', {'task': task})
+    return render(request, 'public/task_detail.html', {'task': task})
 
 def task_create(request):
     if request.method == 'POST':
@@ -64,7 +64,7 @@ def task_create(request):
             messages.success(request, "Task created successfully!")
             return redirect('task_list')
         return HttpResponse(status=500)
-    return render(request, 'frontend/task_form.html', {'action': 'Create'})
+    return render(request, 'public/task_form.html', {'action': 'Create'})
 
 def task_update(request, id):
     try:
@@ -90,9 +90,9 @@ def task_update(request, id):
             return redirect('task_list')
         except requests.exceptions.HTTPError as e:
             messages.error(request, f"Error updating task: {e}")
-            return render(request, 'frontend/task_form.html', {'task': task, 'action': 'Update'})
+            return render(request, 'public/task_form.html', {'task': task, 'action': 'Update'})
     
-    return render(request, 'frontend/task_form.html', {'task': task, 'action': 'Update'})
+    return render(request, 'public/task_form.html', {'task': task, 'action': 'Update'})
 
 def task_delete(request, id):
     try:
@@ -121,4 +121,4 @@ def task_delete(request, id):
             messages.error(request, f"Error deleting task: {e}")
             return redirect('task_list')
     
-    return render(request, 'frontend/task_confirm_delete.html', {'task': task})
+    return render(request, 'public/task_confirm_delete.html', {'task': task})
