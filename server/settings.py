@@ -31,13 +31,16 @@ ALLOWED_HOSTS = [
 ]
 
 # Application definition
-
 INSTALLED_APPS = [
-    'frontend', # For FrontEnd Written by vickvey
-    'api',
+    # Written by vickvey
+    'frontend', # Server Side Rendering
+    'api', # RESTful API Service
+    
+    # 3rd party packages
     'rest_framework',
     'drf_yasg',
 
+    # Default installed apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
