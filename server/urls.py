@@ -22,12 +22,12 @@ urlpatterns = [
     # API schema documentation endpoint
     path("redoc/", schema_view.with_ui("redoc", cache_timeout=0), name="schema-redoc"),
 
-    # Server Side
+    # Server side
     path("admin/", admin.site.urls),
 
     # API routes under /api/
     path("api/", include("api.urls")),
 
     # Client Side
-    path("", include("frontend.urls")),  # For your frontend app
+    path("", include("frontend.urls")),  # Frontend app
 ]
