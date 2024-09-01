@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="container">
+<main class="container">
   <h1 class="center-align">Task List</h1>
   <a href="{% url 'task_create' %}" class="btn">Add New Task</a>
   <div class="row">
@@ -29,7 +29,7 @@
       {% endfor %}
     </ul>
   </div>
-</div>
+</main>
 {% endblock content %}
 
 {% block script %}

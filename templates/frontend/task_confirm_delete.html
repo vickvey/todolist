@@ -3,7 +3,7 @@
 {% block title %}Confirm Delete{% endblock title %}
 
 {% block content %}
-<div class="container">
+<main class="container">
     <div class="card-panel red lighten-4">
         <h1 class="center-align">Are you sure you want to delete "{{ task.title }}"?</h1>
         <div class="center-align">
@@ -14,5 +14,5 @@
             <a href="{% url 'task_list' %}" class="btn-flat waves-effect">Cancel</a>
         </div>
     </div>
-</div>
+</main>
 {% endblock content %}
