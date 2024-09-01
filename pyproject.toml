@@ -5,9 +5,10 @@ description = "A simple todolist web application"
 authors = ["vickvey <vivek22@iiserb.ac.in>"]
 license = "MIT"
 readme = "README.md"
+package-mode = false
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.12" 
 django = "^5.1"
 djangorestframework = "^3.15.2"
 requests = "^2.32.3"
