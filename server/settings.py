@@ -33,7 +33,6 @@ ALLOWED_HOSTS = [
 # Application definition
 INSTALLED_APPS = [
     # Written by vickvey
-    'public', # Server Side Rendering
     'api', # RESTful API Service
     
     # 3rd party packages
@@ -64,9 +63,7 @@ ROOT_URLCONF = 'server.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'templates',
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,15 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 # Base URL for serving static files
-STATIC_URL = '/static/'
-
-# Directory where collectstatic will gather static files for production
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# Additional directories where static files are stored during development
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
