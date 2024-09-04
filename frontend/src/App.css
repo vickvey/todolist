@@ -1,11 +1,21 @@
+/* App.css */
+
 #root {
+  background-color: lightgrey;
+  color: var(--text-color);
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  border-radius: 20px;
   text-align: center;
+  min-height: 50vh;
 }
 
 .card {
+  background-color: var(--tertiary-color);
+  color: var(--text-color);
   padding: 2em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 1em 0;
 }
-
